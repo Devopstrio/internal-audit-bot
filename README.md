@@ -2,19 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="150" alt="Internal Audit Bot Logo" />
 
-<h1>Internal Audit Automation Platform</h1>
+<h1>Internal Audit Bot</h1>
 
-<p><strong>The Institutional-Grade Platform for Continuous Control Monitoring, Automated Evidence Collection, and Multi-Cloud Audit Readiness</strong></p>
+<p><strong>The Institutional-Grade Platform for Continuous Control Monitoring, Automated Evidence Collection, and Multi-Cloud Audit Readiness.</strong></p>
 
-[![Standard: ISO27001--SOC2](https://img.shields.io/badge/Standard-ISO27001--SOC2-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Security: Audit--Automation](https://img.shields.io/badge/Security-Audit--Automation-amber.svg?style=for-the-badge&labelColor=000000)]()
-[![Compliance: Continuous--Verify](https://img.shields.io/badge/Compliance-Continuous--Verify-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Standard: Audit-Excellence](https://img.shields.io/badge/Standard-Audit--Excellence-blue.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Continuous--Compliance](https://img.shields.io/badge/Focus-Continuous--Compliance-indigo.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Evidence is the currency of trust."** 
-> The Internal Audit Bot is a flagship solution for modern GRC and Audit organizations. By orchestrating continuous control assessments, automated evidence gathering across cloud providers, and risk-based audit reporting, it transforms the "Annual Audit Stress" into a state of "Continuous Audit Readiness."
+> **Internal Audit Bot** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global compliance operations. It orchestrates the complex lifecycle of internal audits—from continuous control monitoring and automated multi-cloud evidence vaulting to real-time remediation orchestration and unified compliance governance.
 
 </div>
 
@@ -22,620 +21,264 @@
 
 ## 🏛️ Executive Summary
 
-The **Internal Audit Bot Platform** is a specialized flagship solution designed for Chief Auditors, Compliance Officers, and Risk Managers. Manual audit processes—relying on spreadsheets, point-in-time screenshots, and manual data pulls—are no longer viable for high-velocity, multi-cloud enterprises.
+Fragmented compliance checks and manual evidence collection processes are strategic audit liabilities; lack of centralized compliance orchestration is a primary barrier to organizational regulatory maturity. Organizations fail to maintain audit readiness not because of a lack of controls, but because of fragmented audit standards, lack of automated violation remediation, and an inability to orchestrate internal audits with operational precision.
 
-This platform provides a **Unified Audit Plane**. It demonstrates how to orchestrate institutional auditing—using **FastAPI**, **React 18**, and **Automated Evidence Pipelines**—to create a "Living Audit Trail." By providing **Continuous Monitoring**, **Evidence Auto-Ingestion**, and **Compliance Gap Analysis**, it enables organizations to move from "Reactive Sampling" to "Proactive Assurance."
-
----
-
-## 📉 The "Manual Audit" Problem
-
-Enterprises relying on manual internal audits face significant operational risks:
-- **Point-in-Time Blind Spots**: Audits only reflect the state of the system during the specific week of the assessment, missing violations that occur in between.
-- **Evidence Collection Fatigue**: Engineering teams wasting hundreds of hours manually pulling logs, configuration files, and access lists for auditors.
-- **Audit Stress**: Significant organizational disruption during quarterly or annual audit cycles as teams scramble to find historical evidence.
-- **Inconsistent Control Testing**: Human error in manual control verification leads to unreliable audit findings and regulatory exposure.
+This platform provides the **Compliance Intelligence Plane**. It implements a complete **Enterprise Audit-as-Code Framework**, enabling Audit and Compliance teams to manage global regulatory efforts as first-class citizens. By automating the identification of control failures through real-time log analysis and orchestrating the vaulting of immutable evidence, we ensure that every organizational asset—from cloud infrastructure configs to application access logs—is audited by default, verified for history, and strictly aligned with institutional compliance frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Continuous Compliance**: Moving from annual "snapshot" audits to 24/7 monitoring of critical security and operational controls.
-- **Evidence-as-Code**: Defining evidence collection requirements and control tests as code that can be automatically executed across AWS, Azure, and GCP.
-- **Risk-Based Prioritization**: Dynamically focusing audit efforts on the areas with the highest risk scores and most frequent control failures.
+### 1. Principal Architecture: Global Internal Audit & Compliance Intelligence Plane
+This diagram illustrates the end-to-end flow from multi-cloud log ingestion and rule evaluation to automated remediation, evidence vaulting, and institutional audit reporting.
 
-### 💰 Business Outcomes
-- **85% Reduction in Audit Effort**: Automated evidence collection eliminates the need for manual data gathering and screenshotting.
-- **Real-Time Audit Readiness**: Organizations are always prepared for an external audit (SOC2, HIPAA, PCI) with a complete, indexed evidence vault.
-- **Accelerated Remediation**: Instant identification of control failures allows teams to fix vulnerabilities before they can be exploited or noted in a final audit report.
-
----
-
-## 📐 Architecture Storytelling: 80+ Advanced Diagrams
-
-### 1. Executive Audit Bot Architecture
-*The orchestration of evidence collection and control monitoring.*
 ```mermaid
-graph TD
-    subgraph "Internal Audit Bot"
-        Portal[Audit Command Center]
-        AuditEngine[Audit Execution Engine]
-        EvidenceEngine[Evidence Collection Engine]
-        Compliance[Compliance Engine]
-        DB[(Evidence & Audit Ledger)]
+graph LR
+    %% Subgraph Definitions
+    subgraph AuditIngress["Multi-Cloud & Log Ingress"]
+        direction TB
+        CloudConfigs["AWS / Azure / GCP Configs"]
+        AccessLogs["SAML / OIDC Access Logs"]
+        AppStates["Kubernetes / DB States"]
     end
 
-    subgraph "Audit Scopes"
-        Identity[Identity Audit: Okta / Entra]
-        Infra[Infra Audit: AWS / K8s]
-        App[App Audit: APIs / DBs]
-        Vendor[Vendor Audit: API Health]
+    subgraph IntelligenceEngine["Compliance Intelligence Hub"]
+        direction TB
+        API["FastAPI Audit Gateway"]
+        RuleEngine["Policy-as-Code Rule Hub"]
+        EvidenceVault["Immutable Evidence Vault"]
+        RemediationOrch["Remediation Orchestrator"]
     end
 
-    Portal --> AuditEngine
-    AuditEngine --> EvidenceEngine
-    EvidenceEngine --> Identity
-    EvidenceEngine --> Infra
-    EvidenceEngine --> App
-    EvidenceEngine --> Vendor
-    EvidenceEngine --> DB
-    Compliance --> DB
-    Portal --> Compliance
+    subgraph EnforcementPlane["Distributed Audit Fleet"]
+        direction TB
+        AuditWorkers["Continuous Control Scanners"]
+        EvidenceCollectors["Automated Evidence Gatherers"]
+        AuditProxies["Compliance Validation Proxies"]
+    end
+
+    subgraph OperationsHub["Institutional Audit Hub"]
+        direction TB
+        Scorecard["Compliance Maturity Score"]
+        Analytics["Violation & Audit Stats"]
+        Audit["Forensic Compliance Metadata Lake"]
+    end
+
+    subgraph DevOps["Audit-as-Code Framework"]
+        direction TB
+        TF["Terraform Audit Modules"]
+        DriftBot["Compliance Drift Validator"]
+        ChatOps["Remediation Approval Hub"]
+    end
+
+    %% Flow Arrows
+    AuditIngress -->|1. Submit Audit Data| API
+    API -->|2. Evaluate Rules| RuleEngine
+    RuleEngine -->|3. Identify Violation| RemediationOrch
+    RuleEngine -->|4. Vault Evidence| EvidenceVault
+    
+    RemediationOrch -->|5. Execute Remediation| EnforcementPlane
+    EnforcementPlane -->|6. Notify Violation| ChatOps
+    API -->|7. Visualize Readiness| Scorecard
+    
+    Scorecard -->|8. Track Drift| Analytics
+    Scorecard -->|9. Record Findings| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    DriftBot -->|11. Inject Compliance Risk| RuleEngine
+    Audit -->|12. Improve Controls| RemediationOrch
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8eaf6,stroke:#1a237e,stroke-width:2px;
+    classDef enforcement fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class AuditIngress ingress;
+    class IntelligenceEngine intel;
+    class EnforcementPlane enforcement;
+    class OperationsHub ops;
+    class DevOps devops;
 ```
 
-### 2. The "Living Evidence" Lifecycle
-*How data becomes verifiable audit evidence.*
-```mermaid
-stateDiagram-v2
-    Collect --> Hash: Snapshot Captured
-    Hash --> Index: Integrity Verification
-    Index --> Vault: Secure Storage
-    Vault --> Associate: Map to ISO/SOC2 Control
-    Associate --> Verify: Automated Verification
-    Verify --> Report: Audit Ready
-```
+### 2. The Continuous Audit Lifecycle Flow
+The continuous path of an audit event from initial ingestion and rule analysis to active violation flagging, automated remediation, verification, and institutional forensic auditing.
 
-### 3. Continuous Control Monitoring Loop
-*Ensuring controls never drift into failure.*
 ```mermaid
 graph LR
-    Define[Define Control] --> Monitor[Scan Configuration]
-    Monitor --> Verify[Test Against Policy]
-    Verify -->|Pass| Success[Log Positive Finding]
-    Verify -->|Fail| Alert[Trigger Exception Workflow]
-    Alert --> Remediate[Automated Fix / Ticket]
-    Remediate --> Monitor
+    Ingest["Ingest (Logs)"] --> Analyze["Analyze (Rules)"]
+    Analyze --> Flag["Flag Violation"]
+    Flag --> Remediate["Remediate Fix"]
+    Remediate --> Verify["Verify & Audit"]
 ```
 
-### 4. Risk-Based Audit Prioritization
-*Allocating audit resources where they matter most.*
+### 3. Cross-Cloud Compliance Topology
+Strategically monitoring compliance across AWS, Azure, GCP, and on-premises environments, providing a unified institutional view of global regulatory health and control adherence.
+
+```mermaid
+graph LR
+    AWS["AWS: Security Hub / Config"] -->|Audit| Hub["Unified Compliance Hub"]
+    Azure["Azure: Policy / Defender"] -->|Audit| Hub
+    GCP["GCP: SCC / Org Policy"] -->|Audit| Hub
+    Hub --- Logic["Global Regulatory Engine"]
+```
+
+### 4. Distributed Rule Engine & Policy-as-Code Flow
+Executing complex logic for evaluating multi-cloud resources against SOX, HIPAA, PCI-DSS, and institutional standards, ensuring every organizational asset is compliant by default.
+
 ```mermaid
 graph TD
-    Asset[Cloud Asset] --> Impact[Assess Business Impact]
-    Asset --> Failures[Analyze Historical Failures]
-    Impact & Failures --> Score[Risk Score]
-    Score -->|High| Priority[Priority: Weekly Audit]
-    Score -->|Low| Standard[Standard: Monthly Audit]
+    Resource["Target Resource"] --> SOX["Control: SOX ITGC"]
+    Resource --> HIPAA["Control: HIPAA Security"]
+    Resource --> PCI["Control: PCI-DSS 4.0"]
+    SOX & HIPAA & PCI -->|Evaluate| Report["PATH: Compliance Report"]
+    Report --- Estimate["Control Health Score"]
 ```
 
-### 5. Multi-Cloud Evidence Correlation
-*Mapping findings across different providers.*
+### 5. Automated Evidence Collection & Vaulting Flow
+Securely gathering and storing immutable proof of compliance—including configuration snapshots and access logs—in a WORM (Write Once Read Many) vault for institutional record-keeping.
+
 ```mermaid
 graph LR
-    AWS[AWS Config] --> Map[Correlation Engine]
-    Azure[Azure Policy] --> Map
-    Okta[Okta Logs] --> Map
-    Map --> Control[Unified SOC2 Control: AC.1]
+    Audit["Audit Finding"] -->|Capture| Proof["Evidence Snapshot"]
+    Proof --> Vault["Immutable Evidence Vault"]
+    Vault -->|Hash| Ledger["Tamper-Proof Audit Ledger"]
+    Ledger --- Monitor["Real-Time Evidence Loop"]
 ```
 
-### 6. Identity Audit Workflow (MFA Verification)
-```mermaid
-sequenceDiagram
-    participant Bot as Audit Bot
-    participant IdP as Okta / Entra ID
-    participant DB as Evidence Ledger
+### 6. Remediation Orchestration & Approval Flow
+Managing the lifecycle of a compliance violation fix, handling both automated remediations for low-risk findings and manual approval workflows for critical system changes.
 
-    Bot->>IdP: List Users & MFA Status
-    IdP-->>Bot: User Data (JSON)
-    Bot->>Bot: Filter Non-Compliant Users
-    Bot->>DB: Store Evidence & Generate Exception
-```
-
-### 7. Evidence Integrity (Hashing) Pipeline
 ```mermaid
 graph LR
-    Asset[Config File] --> SHA[SHA-256 Hash]
-    SHA --> Metadata[Add Timestamp & Source]
-    Metadata --> Ledger[Blockchain / WORM Ledger]
+    Violation["Violation Detected"] -->|Auto-Fix| Patch["Apply Automated Patch"]
+    Violation -->|High-Risk| Approval["Manual Approval Required"]
+    Patch & Approval -->|Resolved| Verify["Validation Scan"]
+    Verify --- Audit["Remediation Compliance Log"]
 ```
 
-### 8. Exception Lifecycle Tracking
+### 7. Institutional Compliance Maturity Scorecard
+Grading organizational performance based on key indicators: Control Adherence Rate, Remediation Velocity, and Policy Coverage Index.
+
 ```mermaid
 graph TD
-    Find[Finding Detected] --> Exception[Open Exception]
-    Exception --> Owner[Assign to Owner]
-    Owner --> Fix[Remediation Applied]
-    Fix --> Validate[Re-Audit Control]
-    Validate -->|Pass| Close[Close Exception]
+    Post["Compliance Health: 96%"] --> Risk["Regulatory Gap: 4%"]
+    Post --- C1["Control Rate (98%)"]
+    Post --- C2["Remediation Speed (Hours)"]
 ```
 
-### 9. Compliance Mapping Model
-```mermaid
-graph LR
-    Raw[Raw Control Check] --> ISO[ISO 27001 Annex A]
-    Raw --> SOC2[SOC2 Trust Services]
-    Raw --> HIPAA[HIPAA Security Rule]
-```
-
-### 10. Audit Executive Scorecard Flow
-```mermaid
-graph LR
-    Findings[Raw Audit Findings] --> Agg[Aggregate by Team]
-    Agg --> Grade[Calculate Health Grade: A-F]
-    Grade --> Dashboard[Executive View]
-```
-
-### 11. Continuous control monitoring
-```mermaid
-graph LR
-    C[Control] --> M[Monitor]
-```
-
-### 12. Evidence collection automation
-```mermaid
-graph LR
-    E[Evidence] --> A[Automate]
-```
-
-### 13. Audit workflow flow
-```mermaid
-graph LR
-    A[Audit] --> W[Workflow]
-```
-
-### 14. Risk-based audit planning
-```mermaid
-graph LR
-    R[Risk] --> P[Plan]
-```
-
-### 15. Compliance mapping flow
-```mermaid
-graph LR
-    C[Compliance] --> M[Map]
-```
-
-### 16. Control testing automation
-```mermaid
-graph LR
-    C[Control] --> T[Test]
-```
-
-### 17. Audit trail logging
-```mermaid
-graph LR
-    A[Audit] --> L[Log]
-```
-
-### 18. Exception tracking flow
-```mermaid
-graph LR
-    E[Exception] --> T[Track]
-```
-
-### 19. Remediation workflow
-```mermaid
-graph LR
-    R[Remediate] --> W[Work]
-```
-
-### 20. Policy validation flow
-```mermaid
-graph LR
-    P[Policy] --> V[Validate]
-```
-
-### 21. Data access audits
-```mermaid
-graph LR
-    D[Data] --> A[Audit]
-```
-
-### 22. Identity audit flow
-```mermaid
-graph LR
-    I[Identity] --> A[Audit]
-```
-
-### 23. Infrastructure audit flow
-```mermaid
-graph LR
-    I[Infra] --> A[Audit]
-```
-
-### 24. Application audit flow
-```mermaid
-graph LR
-    A[App] --> A[Audit]
-```
-
-### 25. Vendor risk audit
-```mermaid
-graph LR
-    V[Vendor] --> R[Risk]
-```
-
-### 26. Reporting dashboard flow
-```mermaid
-graph LR
-    R[Report] --> D[Dash]
-```
-
-### 27. Executive scorecard flow
-```mermaid
-graph LR
-    S[Score] --> D[Dash]
-```
-
-### 28. Regulatory readiness flow
-```mermaid
-graph LR
-    R[Ready] --> A[Audit]
-```
-
-### 29. Control monitoring pipeline
-```mermaid
-graph LR
-    M[Monitor] --> P[Pipe]
-```
-
-### 30. Evidence ingestion flow
-```mermaid
-graph LR
-    I[Ingest] --> E[Evidence]
-```
-
-### 31. Identity Audit: Entra ID Flow
-```mermaid
-graph LR
-    E[Entra] --> A[Audit]
-```
-
-### 32. Identity Audit: Okta Flow
-```mermaid
-graph LR
-    O[Okta] --> A[Audit]
-```
-
-### 33. Infrastructure Audit: AWS Flow
-```mermaid
-graph LR
-    A[AWS] --> A[Audit]
-```
-
-### 34. Infrastructure Audit: K8s Flow
-```mermaid
-graph LR
-    K[K8s] --> A[Audit]
-```
-
-### 35. Application Audit: API Flow
-```mermaid
-graph LR
-    A[API] --> A[Audit]
-```
-
-### 36. Application Audit: DB Flow
-```mermaid
-graph LR
-    D[DB] --> A[Audit]
-```
-
-### 37. Audit scheduling flow
-```mermaid
-graph LR
-    S[Sched] --> A[Audit]
-```
-
-### 38. Notification pipeline
-```mermaid
-graph LR
-    A[Audit] --> N[Notify]
-```
-
-### 39. Remediation tracking flow
-```mermaid
-graph LR
-    R[Remed] --> T[Track]
-```
-
-### 40. Gap analysis model
-```mermaid
-graph LR
-    G[Gap] --> A[Analyze]
-```
-
-### 41. ISO 27001 Control Flow
-```mermaid
-graph LR
-    I[ISO] --> C[Control]
-```
-
-### 42. SOC2 Control Flow
-```mermaid
-graph LR
-    S[SOC2] --> C[Control]
-```
-
-### 43. HIPAA Control Flow
-```mermaid
-graph LR
-    H[HIPAA] --> C[Control]
-```
-
-### 44. GDPR Control Flow
-```mermaid
-graph LR
-    G[GDPR] --> C[Control]
-```
-
-### 45. Access control policy flow
-```mermaid
-graph LR
-    A[Access] --> P[Policy]
-```
-
-### 46. Data protection policy flow
-```mermaid
-graph LR
-    D[Data] --> P[Policy]
-```
-
-### 47. Logging policy flow
-```mermaid
-graph LR
-    L[Log] --> P[Policy]
-```
-
-### 48. Encryption policy flow
-```mermaid
-graph LR
-    E[Encryption] --> P[Policy]
-```
-
-### 49. Evidence collection: Logs
-```mermaid
-graph LR
-    L[Logs] --> E[Evidence]
-```
-
-### 50. Evidence collection: Configs
-```mermaid
-graph LR
-    C[Configs] --> E[Evidence]
-```
-
-### 51. Evidence collection: Screenshots (Headless)
-```mermaid
-graph LR
-    S[Screen] --> E[Evidence]
-```
-
-### 52. Evidence collection: Reports
-```mermaid
-graph LR
-    R[Report] --> E[Evidence]
-```
-
-### 53. Audit report: PDF Generation
-```mermaid
-graph LR
-    A[Audit] --> P[PDF]
-```
-
-### 54. Audit report: JSON Export
-```mermaid
-graph LR
-    A[Audit] --> J[JSON]
-```
-
-### 55. Audit report: Dashboard View
-```mermaid
-graph LR
-    A[Audit] --> D[Dash]
-```
-
-### 56. Audit report: Email Notification
-```mermaid
-graph LR
-    A[Audit] --> E[Email]
-```
-
-### 57. Worker: Audit Execution
-```mermaid
-graph LR
-    W[Worker] --> A[Audit]
-```
-
-### 58. Worker: Evidence Collection
-```mermaid
-graph LR
-    W[Worker] --> E[Evidence]
-```
-
-### 59. Worker: Compliance Validation
-```mermaid
-graph LR
-    W[Worker] --> C[Compliance]
-```
-
-### 60. Worker: Reporting
-```mermaid
-graph LR
-    W[Worker] --> R[Report]
-```
-
-### 61. Service: ServiceNow Integration
-```mermaid
-graph LR
-    I[Integrate] --> S[ServiceNow]
-```
-
-### 62. Service: Jira Integration
-```mermaid
-graph LR
-    I[Integrate] --> J[Jira]
-```
-
-### 63. Service: Slack Notification
-```mermaid
-graph LR
-    I[Integrate] --> S[Slack]
-```
-
-### 64. Service: Teams Notification
-```mermaid
-graph LR
-    I[Integrate] --> T[Teams]
-```
-
-### 65. Audit Flow: Access Review
-```mermaid
-graph LR
-    A[Access] --> R[Review]
-```
-
-### 66. Audit Flow: Firewall Check
-```mermaid
-graph LR
-    F[Firewall] --> C[Check]
-```
-
-### 67. Audit Flow: Patching Status
-```mermaid
-graph LR
-    P[Patch] --> S[Status]
-```
-
-### 68. Audit Flow: Backup Verification
-```mermaid
-graph LR
-    B[Backup] --> V[Verify]
-```
-
-### 69. Audit Flow: Encryption Scan
-```mermaid
-graph LR
-    E[Encrypt] --> S[Scan]
-```
-
-### 70. Audit Flow: User Onboarding Audit
-```mermaid
-graph LR
-    U[User] --> O[Onboard] --> A[Audit]
-```
-
-### 71. Audit Flow: Offboarding Audit
-```mermaid
-graph LR
-    U[User] --> O[Offboard] --> A[Audit]
-```
-
-### 72. Audit Flow: Change Management Audit
-```mermaid
-graph LR
-    C[Change] --> A[Audit]
-```
-
-### 73. Audit Flow: Incident Audit
-```mermaid
-graph LR
-    I[Incident] --> A[Audit]
-```
-
-### 74. Audit Flow: Vulnerability Audit
-```mermaid
-graph LR
-    V[Vuln] --> A[Audit]
-```
-
-### 75. Audit lifecycle
-```mermaid
-stateDiagram-v2
-    Plan --> Execute
-    Execute --> Evaluate
-    Evaluate --> Report
-    Report --> FollowUp
-```
+### 8. Identity & RBAC for Audit Governance
+Managing fine-grained access to audit schedules, remediation triggers, and evidence vaults between Internal Auditors, Compliance Engineers, and Resource Owners.
 
-### 76. Evidence vault architecture
 ```mermaid
 graph TD
-    S[Storage] --> H[Hash] --> I[Index]
+    Auditor["Internal Auditor"] --> Hub["Observe Global Audit"]
+    Engineer["Compliance Engineer"] --> Exec["Configure Rules"]
+    Owner["Resource Owner"] --> Audit["Verify Remediation Status"]
 ```
 
-### 77. Control failure detection flow
+### 9. IaC Deployment: Audit-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the audit tracking hubs, compliance scanners, and forensic metadata lakes.
+
 ```mermaid
 graph LR
-    C[Control] --> F[Fail] --> A[Alert]
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Compliance Control Plane"]
+    Engine --> Clusters["HA Audit Fleet"]
 ```
 
-### 78. Compliance readiness score
+### 10. AIOps Compliance Anomaly & Drift Validation Flow
+Using advanced analytics to identify sudden drops in organizational compliance, suspicious policy overrides, or unusual remediation patterns that could result in institutional risk.
+
 ```mermaid
 graph LR
-    C[Compliance] --> R[Ready] --> S[Score]
+    Health["Compliance Health"] --> Analyzer["Anomaly Detection Bot"]
+    Analyzer -->|Drift| Alert["Compliance Drift Alert"]
+    Analyzer -->|Normal| Pass["Status Optimal"]
 ```
 
-### 79. Audit correlation engine
+### 11. Metadata Lake for Forensic Compliance Audit
+Storing long-term records of every control check, every violation flagged, and every remediation action for institutional record-keeping, compliance auditing, and post-audit forensics.
+
 ```mermaid
 graph LR
-    C[Correlation] --> E[Engine]
+    Control["Control Check"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Compliance Metadata Lake"]
+    Lake --> Trends["Audit Readiness Trends"]
 ```
 
-### 80. Value realization model
-```mermaid
-graph LR
-    V[Value] --> R[Realize]
-```
+---
+
+## 🏛️ Core Audit Pillars
+
+1.  **Unified Compliance Coordination**: Maximizing resilience by centralizing all audit monitoring through a single institutional plane.
+2.  **Automated Evidence Vaulting**: Eliminating "missing proof" scenarios through proactive and immutable evidence collection.
+3.  **Sequential Remediation Intelligence**: Ensuring zero-interruption operations through dependency-aware violation fixing.
+4.  **Zero-Trust Policy Protection**: Automatically enforcing policy-as-code and rule evaluation across all storage tiers.
+5.  **Autonomous Audit Logic**: Guaranteeing regulatory availability through automated compliance monitoring runbooks.
+6.  **Full Audit Auditability**: Immutable recording of every control test and remediation result for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### Audit & Evidence Engine
-- **Processing**: Python 3.11+ / FastAPI
-- **Automation**: Scriped evidence collection (AWS Boto3, Azure SDK, Okta API).
-- **Validation**: OPA (Open Policy Agent) for control verification.
+### Audit Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **Rule Engine**: Managed OPA (Open Policy Agent) for complex control evaluation.
+*   **Evidence Hub**: Integration with AWS Config, Azure Policy, and GCP Security Command Center.
+*   **Persistence**: PostgreSQL (Audit Ledger) and Redis (Live Violation State).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege audit management access.
 
-### Frontend (Audit Command Center)
-- **Framework**: React 18 / Vite
-- **Visuals**: Recharts (Compliance Trends, Risk Heatmaps).
-- **Theme**: Slate, Amber, and Rose (Professional Audit Aesthetics).
+### Audit Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Blue, Amber (Modern high-fidelity audit aesthetic).
+*   **Visualization**: D3.js for compliance topologies and Recharts for remediation velocity analytics.
 
-### Infrastructure
-- **IaC**: Terraform (Managed RDS, Redis, EKS clusters).
-- **Storage**: Evidence vault with WORM (Write Once Read Many) characteristics.
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS) for management plane.
+*   **Vault Hub**: Cross-region replicated S3/Blob storage with WORM policies.
+*   **IaC**: Modular Terraform for deploying the compliance landing zone and audit fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/audit_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/scanners`** | Continuous control monitoring fleet | K8s Workers, Cloud APIs |
+| **`infrastructure/vaults`** | Immutable evidence storage sinks | S3, Object Lock, IAM |
+| **`infrastructure/auditing`** | Forensic compliance sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the audit platform
 git clone https://github.com/devopstrio/internal-audit-bot.git
 cd internal-audit-bot
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch services
-make up
+# Launch the Audit stack
+make init
+
+# Trigger a mock control assessment and evidence collection simulation
+make simulate-audit
 ```
+
 Access the Audit Command Center at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
